@@ -1,4 +1,3 @@
-
 import React, { ReactNode } from 'react';
 import Navbar from './Navbar';
 import Footer from './Footer';
@@ -10,7 +9,7 @@ interface LayoutProps {
 
 const Layout = ({ children }: LayoutProps) => {
   return (
-    <ThemeProvider defaultTheme="dark" storageKey="brik-theme">
+    <ThemeProvider defaultTheme="dark" storageKey="brix-theme">
       <div className="min-h-screen flex flex-col">
         <Navbar />
         <main className="flex-grow">{children}</main>

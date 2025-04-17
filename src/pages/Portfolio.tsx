@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { ArrowUpRight, ChevronRight, ArrowRight } from 'lucide-react';
 
@@ -96,7 +95,7 @@ const Portfolio = () => {
             {featuredProjects.map((project, index) => (
               <div key={index} className="group">
                 <div className="rounded-xl overflow-hidden border border-border bg-background shadow-sm transition-all hover:shadow-md">
-                  <div className="aspect-video bg-gradient-to-br from-brik-600 to-brik-800 flex items-center justify-center">
+                  <div className="aspect-video bg-gradient-to-br from-brix-600 to-brix-800 flex items-center justify-center">
                     <h3 className="text-2xl font-bold text-white">{project.title}</h3>
                   </div>
                   <div className="p-6">
@@ -155,7 +154,7 @@ const Portfolio = () => {
       </section>
       
       {/* CTA Section */}
-      <section className="section-padding bg-gradient-to-r from-brik-800 to-brik-600 text-white">
+      <section className="section-padding bg-gradient-to-r from-brix-800 to-brix-600 text-white">
         <div className="container mx-auto">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to build something amazing?</h2>
@@ -163,7 +162,7 @@ const Portfolio = () => {
               Let's discuss your project and explore how we can help you achieve your goals.
             </p>
             <a href="/contact">
-              <button className="px-8 py-3 bg-white text-brik-800 rounded-lg font-medium hover:bg-white/90 transition-colors flex items-center mx-auto">
+              <button className="px-8 py-3 bg-white text-brix-800 rounded-lg font-medium hover:bg-white/90 transition-colors flex items-center mx-auto">
                 Start Your Project <ChevronRight className="ml-1 h-5 w-5" />
               </button>
             </a>

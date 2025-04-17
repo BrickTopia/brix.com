@@ -1,4 +1,3 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -90,6 +89,6 @@
   }
   
   .gradient-text {
-    @apply bg-gradient-to-r from-brik-500 to-brik-700 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-brix-500 to-brix-700 bg-clip-text text-transparent;
   }
 }

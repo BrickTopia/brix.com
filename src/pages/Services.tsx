@@ -1,11 +1,10 @@
-
 import React from 'react';
 import { Code, Database, Brain, BarChart, Server, Smartphone, Shield, Globe, Clock } from 'lucide-react';
 
 const Services = () => {
   const services = [
     {
-      icon: <Code className="h-10 w-10 text-brik-500" />,
+      icon: <Code className="h-10 w-10 text-brix-500" />,
       title: "Full Stack Development",
       description: "End-to-end web applications with intuitive frontend design and empathetic user interfaces tailored to enhance user experience. Our expertise spans React, TypeScript, Node.js and more, allowing us to craft performant and scalable solutions.",
       details: [
@@ -16,7 +15,7 @@ const Services = () => {
       ]
     },
     {
-      icon: <Brain className="h-10 w-10 text-brik-500" />,
+      icon: <Brain className="h-10 w-10 text-brix-500" />,
       title: "AI & LLM Integration",
       description: "AI-powered applications with robust full-stack implementations, leveraging advanced language models for smarter user interactions and functionality. We bridge the gap between cutting-edge AI research and practical business applications.",
       details: [
@@ -27,7 +26,7 @@ const Services = () => {
       ]
     },
     {
-      icon: <BarChart className="h-10 w-10 text-brik-500" />,
+      icon: <BarChart className="h-10 w-10 text-brix-500" />,
       title: "Machine Learning",
       description: "Building, deploying, and scaling ML models tailored for various business needs, including predictive analytics and automation. We handle the complete ML lifecycle from data preparation to production deployment.",
       details: [
@@ -38,7 +37,7 @@ const Services = () => {
       ]
     },
     {
-      icon: <Server className="h-10 w-10 text-brik-500" />,
+      icon: <Server className="h-10 w-10 text-brix-500" />,
       title: "APIs & Integrations",
       description: "Designing and implementing efficient, reliable APIs for seamless system communication and third-party integrations. Our API solutions are built with performance, security, and developer experience in mind.",
       details: [
@@ -49,7 +48,7 @@ const Services = () => {
       ]
     },
     {
-      icon: <Database className="h-10 w-10 text-brik-500" />,
+      icon: <Database className="h-10 w-10 text-brix-500" />,
       title: "Data Flow Services",
       description: "Developing scalable, high-performance data pipelines and streaming solutions for efficient data management and real-time analytics. We help you turn raw data into actionable business intelligence.",
       details: [
@@ -60,7 +59,7 @@ const Services = () => {
       ]
     },
     {
-      icon: <Smartphone className="h-10 w-10 text-brik-500" />,
+      icon: <Smartphone className="h-10 w-10 text-brix-500" />,
       title: "OCR & Computer Vision",
       description: "Proficient in optical character recognition (OCR) and computer vision technologies for enhanced image and text processing applications. These solutions automate document processing and enable new visual intelligence capabilities.",
       details: [
@@ -71,7 +70,7 @@ const Services = () => {
       ]
     },
     {
-      icon: <Globe className="h-10 w-10 text-brik-500" />,
+      icon: <Globe className="h-10 w-10 text-brix-500" />,
       title: "Cloud Architecture",
       description: "Designing and implementing scalable cloud solutions tailored to your business needs. We leverage the best of AWS, Azure, and Google Cloud to create reliable and cost-effective infrastructures.",
       details: [
@@ -82,7 +81,7 @@ const Services = () => {
       ]
     },
     {
-      icon: <Shield className="h-10 w-10 text-brik-500" />,
+      icon: <Shield className="h-10 w-10 text-brix-500" />,
       title: "Security Engineering",
       description: "Implementing robust security measures throughout the software development lifecycle. Our security-first approach ensures your applications and data remain protected against evolving threats.",
       details: [
@@ -93,7 +92,7 @@ const Services = () => {
       ]
     },
     {
-      icon: <Clock className="h-10 w-10 text-brik-500" />,
+      icon: <Clock className="h-10 w-10 text-brix-500" />,
       title: "Technical Consulting",
       description: "Strategic technical guidance to help businesses make informed decisions about technology investments and implementations. We provide expert advice based on years of industry experience.",
       details: [
@@ -133,7 +132,7 @@ const Services = () => {
                   <ul className="space-y-2">
                     {service.details.map((detail, i) => (
                       <li key={i} className="flex items-start">
-                        <span className="text-brik-500 mr-2">•</span>
+                        <span className="text-brix-500 mr-2">•</span>
                         <span className="text-muted-foreground">{detail}</span>
                       </li>
                     ))}
@@ -157,32 +156,32 @@ const Services = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="text-center p-6">
-              <div className="w-16 h-16 rounded-full bg-brik-100 dark:bg-brik-900/30 flex items-center justify-center mx-auto mb-6">
-                <span className="text-2xl font-bold text-brik-600 dark:text-brik-400">1</span>
+              <div className="w-16 h-16 rounded-full bg-brix-100 dark:bg-brix-900/30 flex items-center justify-center mx-auto mb-6">
+                <span className="text-2xl font-bold text-brix-600 dark:text-brix-400">1</span>
               </div>
               <h3 className="text-xl font-semibold mb-3">Discovery</h3>
               <p className="text-muted-foreground">We analyze your requirements and business context to understand your unique challenges.</p>
             </div>
             
             <div className="text-center p-6">
-              <div className="w-16 h-16 rounded-full bg-brik-100 dark:bg-brik-900/30 flex items-center justify-center mx-auto mb-6">
-                <span className="text-2xl font-bold text-brik-600 dark:text-brik-400">2</span>
+              <div className="w-16 h-16 rounded-full bg-brix-100 dark:bg-brix-900/30 flex items-center justify-center mx-auto mb-6">
+                <span className="text-2xl font-bold text-brix-600 dark:text-brix-400">2</span>
               </div>
               <h3 className="text-xl font-semibold mb-3">Planning</h3>
               <p className="text-muted-foreground">We design a comprehensive solution architecture and development roadmap.</p>
             </div>
             
             <div className="text-center p-6">
-              <div className="w-16 h-16 rounded-full bg-brik-100 dark:bg-brik-900/30 flex items-center justify-center mx-auto mb-6">
-                <span className="text-2xl font-bold text-brik-600 dark:text-brik-400">3</span>
+              <div className="w-16 h-16 rounded-full bg-brix-100 dark:bg-brix-900/30 flex items-center justify-center mx-auto mb-6">
+                <span className="text-2xl font-bold text-brix-600 dark:text-brix-400">3</span>
               </div>
               <h3 className="text-xl font-semibold mb-3">Implementation</h3>
               <p className="text-muted-foreground">Our engineering team builds your solution with regular reviews and iterations.</p>
             </div>
             
             <div className="text-center p-6">
-              <div className="w-16 h-16 rounded-full bg-brik-100 dark:bg-brik-900/30 flex items-center justify-center mx-auto mb-6">
-                <span className="text-2xl font-bold text-brik-600 dark:text-brik-400">4</span>
+              <div className="w-16 h-16 rounded-full bg-brix-100 dark:bg-brix-900/30 flex items-center justify-center mx-auto mb-6">
+                <span className="text-2xl font-bold text-brix-600 dark:text-brix-400">4</span>
               </div>
               <h3 className="text-xl font-semibold mb-3">Deployment</h3>
               <p className="text-muted-foreground">We deploy to production with thorough testing and provide ongoing support and optimization.</p>

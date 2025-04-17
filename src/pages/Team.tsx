@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Mail, Linkedin, Github } from 'lucide-react';
 
@@ -75,7 +74,7 @@ const Team = () => {
             {teamMembers.map((member, index) => (
               <div key={index} className="bg-background rounded-xl shadow-sm overflow-hidden border border-border/50">
                 <div className="grid grid-cols-1 md:grid-cols-3">
-                  <div className="md:col-span-1 bg-gradient-to-br from-brik-600 to-brik-800 p-8 text-white flex flex-col justify-between">
+                  <div className="md:col-span-1 bg-gradient-to-br from-brix-600 to-brix-800 p-8 text-white flex flex-col justify-between">
                     <div>
                       <h3 className="text-2xl font-bold mb-2">{member.name}</h3>
                       <p className="text-white/80 font-medium">{member.role}</p>
@@ -113,7 +112,7 @@ const Team = () => {
                       <h4 className="text-lg font-semibold mb-3">Expertise</h4>
                       <div className="flex flex-wrap gap-2">
                         {member.expertise.map((skill, i) => (
-                          <span key={i} className="text-sm px-3 py-1 rounded-full bg-brik-100 dark:bg-brik-900/30 text-brik-800 dark:text-brik-200">
+                          <span key={i} className="text-sm px-3 py-1 rounded-full bg-brix-100 dark:bg-brix-900/30 text-brix-800 dark:text-brix-200">
                             {skill}
                           </span>
                         ))}
@@ -125,7 +124,7 @@ const Team = () => {
                       <ul className="space-y-2">
                         {member.achievements.map((achievement, i) => (
                           <li key={i} className="flex items-start">
-                            <span className="text-brik-500 mr-2">•</span>
+                            <span className="text-brix-500 mr-2">•</span>
                             <span className="text-muted-foreground">{achievement}</span>
                           </li>
                         ))}

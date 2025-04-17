@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Mail, MapPin, PhoneCall, Send } from 'lucide-react';
 import { toast } from "@/hooks/use-toast";
@@ -176,7 +175,7 @@ const Contact = () => {
                 </div>
               </div>
               
-              <div className="bg-brik-500 text-white rounded-xl p-8 shadow-sm">
+              <div className="bg-brix-500 text-white rounded-xl p-8 shadow-sm">
                 <h2 className="text-2xl font-bold mb-6">Let's Build Together</h2>
                 <p className="mb-6">
                   Looking for a team of experienced engineers to bring your vision to life? 

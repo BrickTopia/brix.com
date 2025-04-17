@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { ArrowRight, Code, Database, Brain, BarChart, Server, Smartphone } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -6,32 +5,32 @@ import { Link } from 'react-router-dom';
 const Home = () => {
   const services = [
     {
-      icon: <Code className="h-10 w-10 text-brik-500" />,
+      icon: <Code className="h-10 w-10 text-brix-500" />,
       title: "Full Stack Development",
       description: "End-to-end web applications with intuitive frontend design and empathetic user interfaces."
     },
     {
-      icon: <Brain className="h-10 w-10 text-brik-500" />,
+      icon: <Brain className="h-10 w-10 text-brix-500" />,
       title: "AI & LLM Integration",
       description: "AI-powered applications leveraging advanced language models for smarter interactions."
     },
     {
-      icon: <BarChart className="h-10 w-10 text-brik-500" />,
+      icon: <BarChart className="h-10 w-10 text-brix-500" />,
       title: "Machine Learning",
       description: "Building, deploying, and scaling ML models for predictive analytics and automation."
     },
     {
-      icon: <Server className="h-10 w-10 text-brik-500" />,
+      icon: <Server className="h-10 w-10 text-brix-500" />,
       title: "APIs & Integrations",
       description: "Efficient, reliable APIs for seamless system communication and third-party integrations."
     },
     {
-      icon: <Database className="h-10 w-10 text-brik-500" />,
+      icon: <Database className="h-10 w-10 text-brix-500" />,
       title: "Data Flow Services",
       description: "Scalable, high-performance data pipelines and streaming solutions for efficient data management."
     },
     {
-      icon: <Smartphone className="h-10 w-10 text-brik-500" />,
+      icon: <Smartphone className="h-10 w-10 text-brix-500" />,
       title: "OCR & Computer Vision",
       description: "Advanced image and text processing using optical character recognition and computer vision."
     },
@@ -78,20 +77,17 @@ const Home = () => {
             </div>
             
             <div className="relative">
-              <div className="aspect-square rounded-2xl bg-gradient-to-br from-brik-400/20 to-brik-800/40 p-1">
-                <div className="h-full w-full rounded-xl bg-secondary flex items-center justify-center overflow-hidden">
-                  <div className="text-4xl font-bold p-8 text-center">
-                    <span className="gradient-text">BRIK</span>
-                    <div className="text-xl font-normal mt-4 text-muted-foreground">
-                      Building the future with AI
-                    </div>
+              <div className="aspect-square w-[400px] rounded-2xl bg-gradient-to-br from-brix-400/20 to-brix-800/40 p-0.5">
+                <div className="h-full w-full rounded-xl bg-secondary flex items-center justify-center overflow-hidden border border-border/50">
+                  <div className="w-full h-full">
+                    <img src="/logo.png" alt="Brix Logo" className="w-full h-full" />
                   </div>
                 </div>
               </div>
               
               {/* Decorative elements */}
-              <div className="absolute -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[200%] h-[200%] rounded-full bg-brik-500/5 animate-pulse-slow"></div>
-              <div className="absolute -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150%] h-[150%] rounded-full bg-brik-600/5 animate-pulse-slow"></div>
+              <div className="absolute -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[200%] h-[200%] rounded-full bg-brix-500/5 animate-pulse-slow"></div>
+              <div className="absolute -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150%] h-[150%] rounded-full bg-brix-600/5 animate-pulse-slow"></div>
             </div>
           </div>
         </div>
@@ -140,7 +136,7 @@ const Home = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Project Cards */}
             <div className="group rounded-xl overflow-hidden border border-border/50 bg-secondary/20 hover:bg-secondary/40 transition-colors">
-              <div className="aspect-video bg-gradient-to-r from-brik-800/80 to-brik-600/80 flex items-center justify-center">
+              <div className="aspect-video bg-gradient-to-r from-brix-800/80 to-brix-600/80 flex items-center justify-center">
                 <h3 className="text-xl font-bold text-white">Pebbles Capstone</h3>
               </div>
               <div className="p-6">
@@ -155,7 +151,7 @@ const Home = () => {
             </div>
             
             <div className="group rounded-xl overflow-hidden border border-border/50 bg-secondary/20 hover:bg-secondary/40 transition-colors">
-              <div className="aspect-video bg-gradient-to-r from-brik-800/80 to-brik-600/80 flex items-center justify-center">
+              <div className="aspect-video bg-gradient-to-r from-brix-800/80 to-brix-600/80 flex items-center justify-center">
                 <h3 className="text-xl font-bold text-white">Celiac App</h3>
               </div>
               <div className="p-6">
@@ -170,7 +166,7 @@ const Home = () => {
             </div>
             
             <div className="group rounded-xl overflow-hidden border border-border/50 bg-secondary/20 hover:bg-secondary/40 transition-colors">
-              <div className="aspect-video bg-gradient-to-r from-brik-800/80 to-brik-600/80 flex items-center justify-center">
+              <div className="aspect-video bg-gradient-to-r from-brix-800/80 to-brix-600/80 flex items-center justify-center">
                 <h3 className="text-xl font-bold text-white">FinSimpl</h3>
               </div>
               <div className="p-6">
@@ -196,7 +192,7 @@ const Home = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="section-padding bg-gradient-to-r from-brik-800 to-brik-600 text-white">
+      <section className="section-padding bg-gradient-to-r from-brix-800 to-brix-600 text-white">
         <div className="container mx-auto">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to transform your business with AI?</h2>
@@ -204,7 +200,7 @@ const Home = () => {
               Let's discuss how our engineering expertise can help you achieve your goals.
             </p>
             <Link to="/contact">
-              <button className="px-8 py-3 bg-white text-brik-800 rounded-lg font-medium hover:bg-white/90 transition-colors">
+              <button className="px-8 py-3 bg-white text-brix-800 rounded-lg font-medium hover:bg-white/90 transition-colors">
                 Get in Touch
               </button>
             </Link>

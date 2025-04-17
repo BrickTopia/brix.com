@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { useTheme } from '../theme/ThemeProvider';
 import { Moon, Sun, Menu, X } from 'lucide-react';
@@ -40,7 +39,7 @@ const Navbar = () => {
     }`}>
       <div className="container mx-auto px-4 py-3 flex justify-between items-center">
         <Link to="/" className="flex items-center space-x-2">
-          <span className="text-2xl font-bold gradient-text">Brik Inc</span>
+          <span className="text-2xl font-bold gradient-text">Brix Inc</span>
         </Link>
 
         {/* Desktop Menu */}

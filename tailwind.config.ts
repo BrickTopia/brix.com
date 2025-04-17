@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -63,7 +62,7 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				brik: {
+				brix: {
 					50: '#f0f9ff',
 					100: '#e0f2fe',
 					200: '#bae6fd',
