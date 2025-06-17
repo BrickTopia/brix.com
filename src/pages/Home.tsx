@@ -1,6 +1,7 @@
 import React from 'react';
 import { ArrowRight, Code, Database, Brain, BarChart, Server, Smartphone } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useTheme } from '../components/theme/ThemeProvider';
 
 const Home = () => {
   const services = [
@@ -40,6 +41,12 @@ const Home = () => {
     "Amazon", "Meta", "Microsoft", "AWS"
   ];
 
+  const { theme } = useTheme();
+  let effectiveTheme = theme;
+  if (theme === 'system') {
+    effectiveTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  }
+
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
@@ -76,15 +83,20 @@ const Home = () => {
               </div>
             </div>
             
-            <div className="relative">
-              <div className="aspect-square w-[400px] rounded-2xl bg-gradient-to-br from-brix-400/20 to-brix-800/40 p-0.5">
-                <div className="h-full w-full rounded-xl bg-secondary flex items-center justify-center overflow-hidden border border-border/50">
-                  <div className="w-full h-full">
-                    <img src="/logo.png" alt="Brix Logo" className="w-full h-full" />
-                  </div>
-                </div>
-              </div>
-              
+            <div className="relative flex items-center justify-center min-h-[320px]">
+              <picture>
+                <source srcSet="/brix.png" media="(max-width: 640px)" />
+                <img
+                  src={effectiveTheme === 'dark' ? '/brix_landscape_white.png' : '/logo.png'}
+                  alt="Brix Logo"
+                  className="mx-auto w-full h-auto drop-shadow-lg"
+                  style={{
+                    display: 'block',
+                    maxWidth: window.innerWidth <= 640 ? '90vw' : '625px',
+                    width: window.innerWidth <= 640 ? '100%' : '112.5%',
+                  }}
+                />
+              </picture>
               {/* Decorative elements */}
               <div className="absolute -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[200%] h-[200%] rounded-full bg-brix-500/5 animate-pulse-slow"></div>
               <div className="absolute -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150%] h-[150%] rounded-full bg-brix-600/5 animate-pulse-slow"></div>
