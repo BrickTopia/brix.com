@@ -1,108 +1,20 @@
 import React from 'react';
 import { Code, Database, Brain, BarChart, Server, Smartphone, Shield, Globe, Clock } from 'lucide-react';
+import data from '../data.json';
 
 const Services = () => {
-  const services = [
-    {
-      icon: <Code className="h-10 w-10 text-brix-500" />,
-      title: "Full Stack Development",
-      description: "End-to-end web applications with intuitive frontend design and empathetic user interfaces tailored to enhance user experience. Our expertise spans React, TypeScript, Node.js and more, allowing us to craft performant and scalable solutions.",
-      details: [
-        "Modern frontend frameworks (React, Vue.js)",
-        "Backend development (Node.js, Python, C#)",
-        "Responsive and accessible web design",
-        "API development and integration"
-      ]
-    },
-    {
-      icon: <Brain className="h-10 w-10 text-brix-500" />,
-      title: "AI & LLM Integration",
-      description: "AI-powered applications with robust full-stack implementations, leveraging advanced language models for smarter user interactions and functionality. We bridge the gap between cutting-edge AI research and practical business applications.",
-      details: [
-        "Custom LLM prompt engineering",
-        "AI integration with existing systems",
-        "Natural language processing solutions",
-        "Conversational AI and chatbots"
-      ]
-    },
-    {
-      icon: <BarChart className="h-10 w-10 text-brix-500" />,
-      title: "Machine Learning",
-      description: "Building, deploying, and scaling ML models tailored for various business needs, including predictive analytics and automation. We handle the complete ML lifecycle from data preparation to production deployment.",
-      details: [
-        "Predictive modeling and analytics",
-        "Data labeling and preparation",
-        "MLOps and model deployment",
-        "Performance monitoring and optimization"
-      ]
-    },
-    {
-      icon: <Server className="h-10 w-10 text-brix-500" />,
-      title: "APIs & Integrations",
-      description: "Designing and implementing efficient, reliable APIs for seamless system communication and third-party integrations. Our API solutions are built with performance, security, and developer experience in mind.",
-      details: [
-        "RESTful and GraphQL API design",
-        "Microservices architecture",
-        "Third-party system integration",
-        "API documentation and governance"
-      ]
-    },
-    {
-      icon: <Database className="h-10 w-10 text-brix-500" />,
-      title: "Data Flow Services",
-      description: "Developing scalable, high-performance data pipelines and streaming solutions for efficient data management and real-time analytics. We help you turn raw data into actionable business intelligence.",
-      details: [
-        "ETL/ELT pipeline development",
-        "Real-time data streaming",
-        "Data warehousing solutions",
-        "Big data processing frameworks"
-      ]
-    },
-    {
-      icon: <Smartphone className="h-10 w-10 text-brix-500" />,
-      title: "OCR & Computer Vision",
-      description: "Proficient in optical character recognition (OCR) and computer vision technologies for enhanced image and text processing applications. These solutions automate document processing and enable new visual intelligence capabilities.",
-      details: [
-        "Document scanning and text extraction",
-        "Image classification and object detection",
-        "Visual search capabilities",
-        "Automated data entry systems"
-      ]
-    },
-    {
-      icon: <Globe className="h-10 w-10 text-brix-500" />,
-      title: "Cloud Architecture",
-      description: "Designing and implementing scalable cloud solutions tailored to your business needs. We leverage the best of AWS, Azure, and Google Cloud to create reliable and cost-effective infrastructures.",
-      details: [
-        "Cloud migration strategies",
-        "Serverless architecture",
-        "Multi-cloud deployments",
-        "Cloud cost optimization"
-      ]
-    },
-    {
-      icon: <Shield className="h-10 w-10 text-brix-500" />,
-      title: "Security Engineering",
-      description: "Implementing robust security measures throughout the software development lifecycle. Our security-first approach ensures your applications and data remain protected against evolving threats.",
-      details: [
-        "Secure coding practices",
-        "Vulnerability assessment",
-        "Authentication and authorization systems",
-        "Data encryption and protection"
-      ]
-    },
-    {
-      icon: <Clock className="h-10 w-10 text-brix-500" />,
-      title: "Technical Consulting",
-      description: "Strategic technical guidance to help businesses make informed decisions about technology investments and implementations. We provide expert advice based on years of industry experience.",
-      details: [
-        "Technology stack evaluation",
-        "Performance optimization",
-        "Technical debt reduction",
-        "Architecture review and planning"
-      ]
-    }
-  ];
+  const iconMap = {
+    Code: <Code className="h-10 w-10 text-brix-500" />,
+    Database: <Database className="h-10 w-10 text-brix-500" />,
+    Brain: <Brain className="h-10 w-10 text-brix-500" />,
+    BarChart: <BarChart className="h-10 w-10 text-brix-500" />,
+    Server: <Server className="h-10 w-10 text-brix-500" />,
+    Smartphone: <Smartphone className="h-10 w-10 text-brix-500" />,
+    Shield: <Shield className="h-10 w-10 text-brix-500" />,
+    Globe: <Globe className="h-10 w-10 text-brix-500" />,
+    Clock: <Clock className="h-10 w-10 text-brix-500" />,
+  };
+  const services = data.services;
 
   return (
     <div className="pt-24">
@@ -124,13 +36,13 @@ const Services = () => {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
               <div key={index} className="bg-background rounded-xl p-8 shadow-sm hover:shadow-md transition-all border border-border/50">
-                <div className="mb-6">{service.icon}</div>
+                <div className="mb-6">{iconMap[service.icon]}</div>
                 <h3 className="text-xl font-semibold mb-3">{service.title}</h3>
                 <p className="text-muted-foreground mb-6">{service.description}</p>
                 <div className="space-y-2">
                   <h4 className="font-medium">Key Capabilities:</h4>
                   <ul className="space-y-2">
-                    {service.details.map((detail, i) => (
+                    {service.details && service.details.map((detail, i) => (
                       <li key={i} className="flex items-start">
                         <span className="text-brix-500 mr-2">•</span>
                         <span className="text-muted-foreground">{detail}</span>

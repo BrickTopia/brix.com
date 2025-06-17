@@ -1,76 +1,10 @@
 import React from 'react';
 import { ArrowUpRight, ChevronRight, ArrowRight } from 'lucide-react';
+import data from '../data.json';
 
 const Portfolio = () => {
-  const featuredProjects = [
-    {
-      title: "Pebbles Capstone Project",
-      description: "An innovative educational platform built for interactive learning and collaborative research.",
-      image: "pebbles",
-      technologies: ["React", "Node.js", "MongoDB", "AWS"],
-      link: "https://pebbles-capstone.netlify.app/"
-    },
-    {
-      title: "Celiac App",
-      description: "Innovative application designed to support users with gluten intolerance by integrating advanced OCR and data management for real-time ingredient verification and dietary management.",
-      image: "celiac",
-      technologies: ["React Native", "Python", "TensorFlow", "OCR API"],
-      link: ""
-    },
-    {
-      title: "FinSimpl",
-      description: "Financial platform connecting contractors and clients with tailored financing options through ML-powered matching algorithms.",
-      image: "finsimpl",
-      technologies: ["React", "Node.js", "AWS", "ML Models"],
-      link: "https://www.finsimpl.com/"
-    },
-    {
-      title: "Budlight Canada",
-      description: "Comprehensive redevelopment of the Bud Light Canada website with modern web technologies and responsive design.",
-      image: "budlight",
-      technologies: ["React", "Next.js", "Contentful", "Vercel"],
-      link: "https://www.budlight.ca/en/age-gate"
-    }
-  ];
-
-  const clientProjects = [
-    {
-      client: "Microsoft",
-      title: "Bing Amenities Enhancement",
-      description: "Improved coverage for +6 million new businesses with a 55% feature coverage improvement. Enhanced quality by 30% using LLMs and reduced user-reported bugs by 80%.",
-      technologies: ["C#", "Python", "ML", "LLM"]
-    },
-    {
-      client: "Microsoft",
-      title: "Bing Content Extraction Pipeline",
-      description: "Engineered automated pipeline for discovering new domains for Bing, onboarding +500 new providers and enriching data for +2.7B businesses.",
-      technologies: ["Azure Data Factory", "SQL", "C#"]
-    },
-    {
-      client: "Amazon",
-      title: "Personalized Recommender System",
-      description: "Delivered a pioneering hyper-personalized recommender system, live since 2020, managing the full lifecycle from dataset creation to deployment and UI integration.",
-      technologies: ["ML", "AWS", "Python", "React"]
-    },
-    {
-      client: "AWS",
-      title: "Identity Services Data Migration",
-      description: "Migrated millions of customer data to Universal Identity Store while ensuring synchronization between data stores, implementing highly scalable distributed systems.",
-      technologies: ["DynamoDB", "ElasticSearch", "Java", "AWS"]
-    },
-    {
-      client: "Meta",
-      title: "Advertising Transaction Pipeline",
-      description: "Led the rapid three-week rebuild of Meta's advertising transaction pipeline, managing approximately $2-3 billion in monthly transactions and ensuring regulatory compliance.",
-      technologies: ["Python", "React", "GraphQL", "Data Engineering"]
-    },
-    {
-      client: "Wealthsimple",
-      title: "Trading Pipeline Optimization",
-      description: "Engineered numerous cost-effective, high-throughput pipelines reliably handling 100,000+ daily trades with improved efficiency and reliability.",
-      technologies: ["Go", "AWS", "Kafka", "PostgreSQL"]
-    }
-  ];
+  const featuredProjects = data.featuredProjects;
+  const clientProjects = data.clientProjects;
 
   return (
     <div className="pt-24">

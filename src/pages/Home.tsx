@@ -2,44 +2,19 @@ import React from 'react';
 import { ArrowRight, Code, Database, Brain, BarChart, Server, Smartphone } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useTheme } from '../components/theme/ThemeProvider';
+import data from '../data.json';
 
 const Home = () => {
-  const services = [
-    {
-      icon: <Code className="h-10 w-10 text-brix-500" />,
-      title: "Full Stack Development",
-      description: "End-to-end web applications with intuitive frontend design and empathetic user interfaces."
-    },
-    {
-      icon: <Brain className="h-10 w-10 text-brix-500" />,
-      title: "AI & LLM Integration",
-      description: "AI-powered applications leveraging advanced language models for smarter interactions."
-    },
-    {
-      icon: <BarChart className="h-10 w-10 text-brix-500" />,
-      title: "Machine Learning",
-      description: "Building, deploying, and scaling ML models for predictive analytics and automation."
-    },
-    {
-      icon: <Server className="h-10 w-10 text-brix-500" />,
-      title: "APIs & Integrations",
-      description: "Efficient, reliable APIs for seamless system communication and third-party integrations."
-    },
-    {
-      icon: <Database className="h-10 w-10 text-brix-500" />,
-      title: "Data Flow Services",
-      description: "Scalable, high-performance data pipelines and streaming solutions for efficient data management."
-    },
-    {
-      icon: <Smartphone className="h-10 w-10 text-brix-500" />,
-      title: "OCR & Computer Vision",
-      description: "Advanced image and text processing using optical character recognition and computer vision."
-    },
-  ];
-
-  const clients = [
-    "Amazon", "Meta", "Microsoft", "AWS"
-  ];
+  const iconMap = {
+    Code: <Code className="h-10 w-10 text-brix-500" />,
+    Brain: <Brain className="h-10 w-10 text-brix-500" />,
+    BarChart: <BarChart className="h-10 w-10 text-brix-500" />,
+    Server: <Server className="h-10 w-10 text-brix-500" />,
+    Database: <Database className="h-10 w-10 text-brix-500" />,
+    Smartphone: <Smartphone className="h-10 w-10 text-brix-500" />,
+  };
+  const services = data.services;
+  const clients = data.clients;
 
   const { theme } = useTheme();
   let effectiveTheme = theme;
@@ -74,7 +49,7 @@ const Home = () => {
               </div>
               
               <div className="pt-8">
-                <p className="text-sm text-muted-foreground mb-4">Trusted by industry leaders:</p>
+                <p className="text-sm text-muted-foreground mb-4">Built by engineers from:</p>
                 <div className="flex flex-wrap gap-6 items-center">
                   {clients.map((client) => (
                     <span key={client} className="text-foreground/80 font-medium">{client}</span>
@@ -118,7 +93,7 @@ const Home = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
               <div key={index} className="bg-background rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow border border-border/50">
-                <div className="mb-6">{service.icon}</div>
+                <div className="mb-6">{iconMap[service.icon]}</div>
                 <h3 className="text-xl font-semibold mb-3">{service.title}</h3>
                 <p className="text-muted-foreground">{service.description}</p>
               </div>
