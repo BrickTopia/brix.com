@@ -29,14 +29,22 @@ const Contact = () => {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          'Accept': 'application/json',
         },
         body: JSON.stringify({
-          data: [formData]
+          name: formData.name,
+          email: formData.email,
+          company: formData.company || '',
+          message: formData.message,
+          timestamp: new Date().toISOString()
         }),
       });
 
+      const responseData = await response.json();
+      console.log('API Response:', responseData);
+
       if (!response.ok) {
-        throw new Error('Failed to submit form');
+        throw new Error(`API Error: ${responseData.error || response.statusText}`);
       }
 
       toast({
@@ -54,7 +62,7 @@ const Contact = () => {
       console.error('Error submitting form:', error);
       toast({
         title: "Error",
-        description: "Failed to send message. Please try again later.",
+        description: error instanceof Error ? error.message : "Failed to send message. Please try again later.",
         variant: "destructive",
       });
     } finally {
@@ -79,7 +87,7 @@ const Contact = () => {
       {/* Contact Form & Info */}
       <section className="section-padding bg-secondary/50">
         <div className="container mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <div className="max-w-2xl mx-auto">
             {/* Contact Form */}
             <div className="bg-background rounded-xl p-8 shadow-sm border border-border/50">
               <h2 className="text-2xl font-bold mb-6">Send us a message</h2>
@@ -162,50 +170,6 @@ const Contact = () => {
                   )}
                 </button>
               </form>
-            </div>
-            
-            {/* Contact Info */}
-            <div className="flex flex-col">
-              <div className="bg-background rounded-xl p-8 shadow-sm border border-border/50 mb-8">
-                <h2 className="text-2xl font-bold mb-6">Contact Information</h2>
-                
-                <div className="space-y-6">
-                  <div className="flex items-start">
-                    <div className="p-3 rounded-full bg-primary/10 text-primary mr-4">
-                      <Mail className="h-5 w-5" />
-                    </div>
-                    <div>
-                      <h3 className="font-medium">Email</h3>
-                      <a href="mailto:info@brikinc.com" className="text-muted-foreground hover:text-primary transition-colors">
-                        info@brikinc.com
-                      </a>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-start">
-                    <div className="p-3 rounded-full bg-primary/10 text-primary mr-4">
-                      <MapPin className="h-5 w-5" />
-                    </div>
-                    <div>
-                      <h3 className="font-medium">Location</h3>
-                      <p className="text-muted-foreground">
-                        Toronto, Ontario, Canada
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              
-              <div className="bg-brix-500 text-white rounded-xl p-8 shadow-sm">
-                <h2 className="text-2xl font-bold mb-6">Let's Build Together</h2>
-                <p className="mb-6">
-                  Looking for a team of experienced engineers to bring your vision to life? 
-                  We're ready to help you build innovative AI solutions that drive real business value.
-                </p>
-                <p className="text-sm text-white/80">
-                  Our team will respond to your inquiry within 24-48 business hours.
-                </p>
-              </div>
             </div>
           </div>
         </div>
