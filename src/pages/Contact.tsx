@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Mail, MapPin, PhoneCall, Send } from 'lucide-react';
 import { toast } from "@/hooks/use-toast";
+import data from '../data.json';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -40,6 +41,9 @@ const Contact = () => {
       setIsSubmitting(false);
     }, 1500);
   };
+
+  const contactInfo = data.contactInfo;
+  const faq = data.faq;
 
   return (
     <div className="pt-24">
@@ -155,8 +159,8 @@ const Contact = () => {
                     </div>
                     <div>
                       <h3 className="font-medium">Email</h3>
-                      <a href="mailto:info@brikinc.com" className="text-muted-foreground hover:text-primary transition-colors">
-                        info@brikinc.com
+                      <a href={`mailto:${contactInfo.email}`} className="text-muted-foreground hover:text-primary transition-colors">
+                        {contactInfo.email}
                       </a>
                     </div>
                   </div>
@@ -168,7 +172,7 @@ const Contact = () => {
                     <div>
                       <h3 className="font-medium">Location</h3>
                       <p className="text-muted-foreground">
-                        Toronto, Ontario, Canada
+                        {contactInfo.location}
                       </p>
                     </div>
                   </div>
@@ -178,11 +182,10 @@ const Contact = () => {
               <div className="bg-brix-500 text-white rounded-xl p-8 shadow-sm">
                 <h2 className="text-2xl font-bold mb-6">Let's Build Together</h2>
                 <p className="mb-6">
-                  Looking for a team of experienced engineers to bring your vision to life? 
-                  We're ready to help you build innovative AI solutions that drive real business value.
+                  {contactInfo.cta}
                 </p>
                 <p className="text-sm text-white/80">
-                  Our team will respond to your inquiry within 24-48 business hours.
+                  {contactInfo.responseTime}
                 </p>
               </div>
             </div>
@@ -197,33 +200,12 @@ const Contact = () => {
             <h2 className="text-3xl font-bold mb-8 text-center">Frequently Asked Questions</h2>
             
             <div className="space-y-6">
-              <div className="p-6 bg-background rounded-xl border border-border/50">
-                <h3 className="text-xl font-semibold mb-2">What types of projects do you typically work on?</h3>
-                <p className="text-muted-foreground">
-                  We specialize in AI engineering, full-stack development, and data systems. Our projects range from AI-powered applications and LLM integrations to scalable data pipelines and enterprise systems.
-                </p>
-              </div>
-              
-              <div className="p-6 bg-background rounded-xl border border-border/50">
-                <h3 className="text-xl font-semibold mb-2">How does your project process work?</h3>
-                <p className="text-muted-foreground">
-                  We follow a structured approach: discovery to understand your needs, planning the solution architecture, implementation with regular reviews, and deployment with ongoing support.
-                </p>
-              </div>
-              
-              <div className="p-6 bg-background rounded-xl border border-border/50">
-                <h3 className="text-xl font-semibold mb-2">Do you work with startups or just enterprise clients?</h3>
-                <p className="text-muted-foreground">
-                  We work with clients of all sizes, from startups to enterprise organizations. Our solutions are always tailored to meet your specific needs and budget.
-                </p>
-              </div>
-              
-              <div className="p-6 bg-background rounded-xl border border-border/50">
-                <h3 className="text-xl font-semibold mb-2">What technologies do you specialize in?</h3>
-                <p className="text-muted-foreground">
-                  Our team has expertise in a wide range of technologies including AWS, Azure, Python, React, Node.js, TensorFlow, PyTorch, and various database systems. We select the best technologies for each project's specific requirements.
-                </p>
-              </div>
+              {faq.map((item, idx) => (
+                <div key={idx} className="p-6 bg-background rounded-xl border border-border/50">
+                  <h3 className="text-xl font-semibold mb-2">{item.question}</h3>
+                  <p className="text-muted-foreground">{item.answer}</p>
+                </div>
+              ))}
             </div>
           </div>
         </div>

@@ -1,57 +1,10 @@
 import React from 'react';
 import { Mail, Linkedin, Github } from 'lucide-react';
+import data from '../data.json';
 
 const Team = () => {
-  const teamMembers = [
-    {
-      name: "Sam Weninger",
-      role: "Backend & Big Data Engineer",
-      bio: "Sam is an experienced engineer with expertise in backend systems, big data processing, and AI integration. Previously at Microsoft, Huawei, and Holland Bloorview, Sam has worked on production-scale data pipelines handling petabytes of data for Bing.",
-      expertise: ["Backend Development", "Data Engineering", "LLMs", "Cloud Architecture"],
-      experience: ["Microsoft (2022–2024)", "Huawei (2020-2021)", "Holland Bloorview"],
-      achievements: [
-        "Enhanced Bing Amenities quality by +30% leveraging LLMs, benefiting +14M businesses",
-        "Implemented language backfill logic for +2 Billion URLs indexed by Bing",
-        "Engineered automated pipeline for discovering new domains for Bing"
-      ],
-      email: "sweninger99@gmail.com",
-      linkedin: "https://linkedin.com/in/samuel-weninger",
-      github: "https://github.com/samweninger",
-      image: "sam"
-    },
-    {
-      name: "Nish Patel",
-      role: "Data & Cloud Engineer",
-      bio: "Nish is specialized in cloud infrastructure and data management systems. With experience at AWS, Genesys, and Hydro One, Nish has worked on large-scale data systems and identity services that serve millions of customers.",
-      expertise: ["Cloud Computing", "Distributed Systems", "Database Design", "Backend Development"],
-      experience: ["AWS", "Skip", "Genesys", "Hydro One"],
-      achievements: [
-        "Implemented highly scalable distributed systems for AWS Identity Centre",
-        "Worked on multi-region replication and encryption library at AWS",
-        "Improved database design and querying efficiency at Hydro One"
-      ],
-      email: "nishbpatel@hotmail.com",
-      linkedin: "https://linkedin.com/in/nish-patel",
-      github: "https://github.com/nishpatel",
-      image: "nish"
-    },
-    {
-      name: "Krishna Solanki",
-      role: "ML & Full Stack Engineer",
-      bio: "Krishna specializes in machine learning, AI, and full-stack development. With experience at Meta, Amazon, and Wealthsimple, Krishna has delivered recommender systems, ML infrastructure, and high-throughput data pipelines.",
-      expertise: ["Machine Learning", "AI Systems", "Full Stack Development", "Data Engineering"],
-      experience: ["SaltXC", "Meta", "Amazon", "Wealthsimple"],
-      achievements: [
-        "Developed a hyper-personalized recommender system for Amazon, live since 2020",
-        "Led 3-week rebuild of Meta's advertising transaction pipeline ($2-3B monthly)",
-        "Built ML infrastructure for FinSimpl using AWS"
-      ],
-      email: "ksolo9000@gmail.com",
-      linkedin: "https://linkedin.com/in/krishna-solanki",
-      github: "https://github.com/krishnasolanki",
-      image: "krishna"
-    }
-  ];
+  const teamMembers = data.teamMembers;
+  const values = data.values;
 
   return (
     <div className="pt-24">
@@ -90,13 +43,13 @@ const Team = () => {
                     </div>
                     
                     <div className="flex space-x-4 mt-8">
-                      <a href={`mailto:${member.email}`} aria-label="Email" className="text-white hover:text-white/80 transition-colors">
+                      <a href="mailto:brixaigroup@gmail.com" aria-label="Email" className="text-white hover:text-white/80 transition-colors">
                         <Mail className="h-5 w-5" />
                       </a>
-                      <a href={member.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="text-white hover:text-white/80 transition-colors">
+                      <a href="https://github.com/BrickTopia" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="text-white hover:text-white/80 transition-colors">
                         <Github className="h-5 w-5" />
                       </a>
-                      <a href={member.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="text-white hover:text-white/80 transition-colors">
+                      <a href="https://www.linkedin.com/company/brix-inc" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="text-white hover:text-white/80 transition-colors">
                         <Linkedin className="h-5 w-5" />
                       </a>
                     </div>
@@ -149,26 +102,12 @@ const Team = () => {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-background p-8 rounded-xl border border-border/50 shadow-sm">
-              <h3 className="text-xl font-semibold mb-4">Technical Excellence</h3>
-              <p className="text-muted-foreground">
-                We hold ourselves to the highest standards of engineering, constantly pushing the boundaries of what's possible.
-              </p>
-            </div>
-            
-            <div className="bg-background p-8 rounded-xl border border-border/50 shadow-sm">
-              <h3 className="text-xl font-semibold mb-4">Pragmatic Innovation</h3>
-              <p className="text-muted-foreground">
-                We balance cutting-edge technology with practical solutions that deliver real business value.
-              </p>
-            </div>
-            
-            <div className="bg-background p-8 rounded-xl border border-border/50 shadow-sm">
-              <h3 className="text-xl font-semibold mb-4">Client Partnership</h3>
-              <p className="text-muted-foreground">
-                We work closely with our clients, understanding their challenges and goals to deliver tailored solutions.
-              </p>
-            </div>
+            {values.map((value, idx) => (
+              <div key={idx} className="bg-background p-8 rounded-xl border border-border/50 shadow-sm">
+                <h3 className="text-xl font-semibold mb-4">{value.title}</h3>
+                <p className="text-muted-foreground">{value.description}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
