@@ -4,15 +4,9 @@ import data from '../data.json';
 
 const Services = () => {
   const iconMap = {
+    Brain: <Brain className="h-10 w-10 text-brix-500" />,
     Code: <Code className="h-10 w-10 text-brix-500" />,
     Database: <Database className="h-10 w-10 text-brix-500" />,
-    Brain: <Brain className="h-10 w-10 text-brix-500" />,
-    BarChart: <BarChart className="h-10 w-10 text-brix-500" />,
-    Server: <Server className="h-10 w-10 text-brix-500" />,
-    Smartphone: <Smartphone className="h-10 w-10 text-brix-500" />,
-    Shield: <Shield className="h-10 w-10 text-brix-500" />,
-    Globe: <Globe className="h-10 w-10 text-brix-500" />,
-    Clock: <Clock className="h-10 w-10 text-brix-500" />,
   };
   const services = data.services;
 

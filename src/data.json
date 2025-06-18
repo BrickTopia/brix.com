@@ -1,119 +1,56 @@
 {
   "services": [
     {
-      "icon": "Code",
-      "title": "Full Stack Development",
-      "description": "End-to-end web applications with intuitive frontend design and empathetic user interfaces tailored to enhance user experience. Our expertise spans React, TypeScript, Node.js and more, allowing us to craft performant and scalable solutions.",
-      "details": [
-        "Modern frontend frameworks (React, Vue.js)",
-        "Backend development (Node.js, Python, C#)",
-        "Responsive and accessible web design",
-        "API development and integration"
-      ]
-    },
-    {
       "icon": "Brain",
-      "title": "AI & LLM Integration",
-      "description": "AI-powered applications with robust full-stack implementations, leveraging advanced language models for smarter user interactions and functionality. We bridge the gap between cutting-edge AI research and practical business applications.",
+      "title": "AI, LLM, ML & OCR",
+      "description": "Production-grade AI, machine learning, and computer vision solutions for real business outcomes.",
       "details": [
-        "Custom LLM prompt engineering",
-        "AI integration with existing systems",
-        "Natural language processing solutions",
-        "Conversational AI and chatbots"
+        "Custom LLMs & prompt engineering",
+        "Predictive analytics & automation",
+        "OCR & computer vision applications",
+        "Conversational AI & chatbots"
       ]
     },
     {
-      "icon": "BarChart",
-      "title": "Machine Learning",
-      "description": "Building, deploying, and scaling ML models tailored for various business needs, including predictive analytics and automation. We handle the complete ML lifecycle from data preparation to production deployment.",
+      "icon": "Code",
+      "title": "Full Stack & Security",
+      "description": "Modern web, mobile, and API development with security best practices built-in.",
       "details": [
-        "Predictive modeling and analytics",
-        "Data labeling and preparation",
-        "MLOps and model deployment",
-        "Performance monitoring and optimization"
-      ]
-    },
-    {
-      "icon": "Server",
-      "title": "APIs & Integrations",
-      "description": "Designing and implementing efficient, reliable APIs for seamless system communication and third-party integrations. Our API solutions are built with performance, security, and developer experience in mind.",
-      "details": [
-        "RESTful and GraphQL API design",
-        "Microservices architecture",
-        "Third-party system integration",
-        "API documentation and governance"
+        "Frontend & backend engineering",
+        "Secure API & system integration",
+        "Authentication & authorization",
+        "Vulnerability assessment"
       ]
     },
     {
       "icon": "Database",
-      "title": "Data Flow Services",
-      "description": "Developing scalable, high-performance data pipelines and streaming solutions for efficient data management and real-time analytics. We help you turn raw data into actionable business intelligence.",
+      "title": "Data & Cloud Engineering",
+      "description": "Scalable data pipelines, cloud infrastructure, and real-time analytics for your business.",
       "details": [
-        "ETL/ELT pipeline development",
-        "Real-time data streaming",
-        "Data warehousing solutions",
-        "Big data processing frameworks"
-      ]
-    },
-    {
-      "icon": "Smartphone",
-      "title": "OCR & Computer Vision",
-      "description": "Proficient in optical character recognition (OCR) and computer vision technologies for enhanced image and text processing applications. These solutions automate document processing and enable new visual intelligence capabilities.",
-      "details": [
-        "Document scanning and text extraction",
-        "Image classification and object detection",
-        "Visual search capabilities",
-        "Automated data entry systems"
-      ]
-    },
-    {
-      "icon": "Globe",
-      "title": "Cloud Architecture",
-      "description": "Designing and implementing scalable cloud solutions tailored to your business needs. We leverage the best of AWS, Azure, and Google Cloud to create reliable and cost-effective infrastructures.",
-      "details": [
-        "Cloud migration strategies",
-        "Serverless architecture",
-        "Multi-cloud deployments",
-        "Cloud cost optimization"
-      ]
-    },
-    {
-      "icon": "Shield",
-      "title": "Security Engineering",
-      "description": "Implementing robust security measures throughout the software development lifecycle. Our security-first approach ensures your applications and data remain protected against evolving threats.",
-      "details": [
-        "Secure coding practices",
-        "Vulnerability assessment",
-        "Authentication and authorization systems",
-        "Data encryption and protection"
-      ]
-    },
-    {
-      "icon": "Clock",
-      "title": "Technical Consulting",
-      "description": "Strategic technical guidance to help businesses make informed decisions about technology investments and implementations. We provide expert advice based on years of industry experience.",
-      "details": [
-        "Technology stack evaluation",
-        "Performance optimization",
-        "Technical debt reduction",
-        "Architecture review and planning"
+        "ETL/ELT & data streaming",
+        "Cloud migration & architecture",
+        "Big data processing",
+        "Cost optimization"
       ]
     }
   ],
   "clients": [
-    "Amazon", "Meta", "Microsoft"
+    { "name": "Meta", "logo": "/meta.png" },
+    { "name": "Amazon", "logo": "/amazon.png" },
+    { "name": "Microsoft", "logo": "/microsoft.png" },
+    { "name": "Wealthsimple", "logo": "/wealthsimple.png" }
   ],
   "featuredProjects": [
     {
-      "title": "Pebbles Capstone Project",
-      "description": "An innovative educational platform built for interactive learning and collaborative research.",
-      "image": "pebbles",
+      "title": "Pebbles",
+      "description": "Educational platform built for matching students with mentors for interactive learning and collaborative research.",
+      "image": "/pebbles.png",
       "technologies": ["React", "Node.js", "MongoDB", "AWS"],
       "link": "https://pebbles-capstone.netlify.app/"
     },
     {
       "title": "Celiac App",
-      "description": "Innovative application designed to support users with gluten intolerance by integrating advanced OCR and data management for real-time ingredient verification and dietary management.",
+      "description": "An application designed to support users with gluten intolerance by integrating advanced OCR and data management for real-time ingredient verification and dietary management.",
       "image": "celiac",
       "technologies": ["React Native", "Python", "TensorFlow", "OCR API"],
       "link": ""
@@ -121,14 +58,14 @@
     {
       "title": "FinSimpl",
       "description": "Financial platform connecting contractors and clients with tailored financing options through ML-powered matching algorithms.",
-      "image": "finsimpl",
+      "image": "/finsimpl.png",
       "technologies": ["React", "Node.js", "AWS", "ML Models"],
       "link": "https://www.finsimpl.com/"
     },
     {
       "title": "Budlight Canada",
       "description": "Comprehensive redevelopment of the Bud Light Canada website with modern web technologies and responsive design.",
-      "image": "budlight",
+      "image": "/budlight.png",
       "technologies": ["React", "Next.js", "Contentful", "Vercel"],
       "link": "https://www.budlight.ca/en/age-gate"
     }
@@ -177,7 +114,7 @@
       "role": "Backend & Big Data Engineer",
       "bio": "Sam is an experienced engineer with expertise in backend systems, big data processing, and AI integration. Previously at Microsoft, Huawei, and Holland Bloorview, Sam has worked on production-scale data pipelines handling petabytes of data for Bing.",
       "expertise": ["Backend Development", "Data Engineering", "LLMs", "Cloud Architecture"],
-      "experience": ["Microsoft (2022–2024)", "Huawei (2020-2021)", "Holland Bloorview"],
+      "experience": ["Microsoft", "Huawei"],
       "achievements": [
         "Enhanced Bing Amenities quality by +30% leveraging LLMs, benefiting +14M businesses",
         "Implemented language backfill logic for +2 Billion URLs indexed by Bing",

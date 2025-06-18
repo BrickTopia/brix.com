@@ -29,8 +29,18 @@ const Portfolio = () => {
             {featuredProjects.map((project, index) => (
               <div key={index} className="group">
                 <div className="rounded-xl overflow-hidden border border-border bg-background shadow-sm transition-all hover:shadow-md">
-                  <div className="aspect-video bg-gradient-to-br from-brix-600 to-brix-800 flex items-center justify-center">
-                    <h3 className="text-2xl font-bold text-white">{project.title}</h3>
+                  <div className="relative aspect-video bg-gradient-to-br from-brix-600 to-brix-800 flex items-center justify-center overflow-hidden group">
+                    {project.image && (
+                      <img
+                        src={project.image}
+                        alt={project.title}
+                        className="w-full h-full object-cover object-center"
+                        style={{ aspectRatio: '16/9' }}
+                      />
+                    )}
+                    <div className="absolute inset-0 flex items-center justify-center bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <span className="text-white text-2xl font-bold text-center px-4 drop-shadow-lg">{project.title}</span>
+                    </div>
                   </div>
                   <div className="p-6">
                     <div className="mb-4 flex flex-wrap gap-2">
@@ -52,34 +62,6 @@ const Portfolio = () => {
                       </a>
                     )}
                   </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-      
-      {/* Client Projects */}
-      <section className="section-padding">
-        <div className="container mx-auto">
-          <h2 className="text-3xl font-bold mb-12">Enterprise Solutions</h2>
-          
-          <div className="grid grid-cols-1 gap-8">
-            {clientProjects.map((project, index) => (
-              <div key={index} className="border border-border rounded-xl p-6 hover:bg-secondary/20 transition-colors">
-                <div className="flex flex-col md:flex-row md:items-center gap-4 mb-4">
-                  <h3 className="text-xl font-semibold">{project.title}</h3>
-                  <div className="px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium">
-                    {project.client}
-                  </div>
-                </div>
-                <p className="text-muted-foreground mb-4">{project.description}</p>
-                <div className="flex flex-wrap gap-2">
-                  {project.technologies.map((tech, i) => (
-                    <span key={i} className="text-xs px-3 py-1 rounded-full bg-secondary text-muted-foreground">
-                      {tech}
-                    </span>
-                  ))}
                 </div>
               </div>
             ))}

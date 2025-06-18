@@ -15,6 +15,7 @@ const Home = () => {
   };
   const services = data.services;
   const clients = data.clients;
+  const featuredProjects = data.featuredProjects.slice(0, 3);
 
   const { theme } = useTheme();
   let effectiveTheme = theme;
@@ -49,10 +50,16 @@ const Home = () => {
               </div>
               
               <div className="pt-8">
-                <p className="text-sm text-muted-foreground mb-4">Built by engineers from:</p>
+                <p className="text-sm text-muted-foreground mb-4">Engineering expertise from:</p>
                 <div className="flex flex-wrap gap-6 items-center">
                   {clients.map((client) => (
-                    <span key={client} className="text-foreground/80 font-medium">{client}</span>
+                    <img
+                      key={client.name}
+                      src={client.logo}
+                      alt={client.name}
+                      className="h-10 w-auto object-contain"
+                      title={client.name}
+                    />
                   ))}
                 </div>
               </div>
@@ -121,51 +128,32 @@ const Home = () => {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Project Cards */}
-            <div className="group rounded-xl overflow-hidden border border-border/50 bg-secondary/20 hover:bg-secondary/40 transition-colors">
-              <div className="aspect-video bg-gradient-to-r from-brix-800/80 to-brix-600/80 flex items-center justify-center">
-                <h3 className="text-xl font-bold text-white">Pebbles Capstone</h3>
+            {featuredProjects.map((project, index) => (
+              <div key={index} className="group rounded-xl overflow-hidden border border-border/50 bg-secondary/20 hover:bg-secondary/40 transition-colors">
+                <div className="relative aspect-video bg-gradient-to-br from-brix-600 to-brix-800 flex items-center justify-center overflow-hidden group">
+                  {project.image && (
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-full object-cover object-center"
+                      style={{ aspectRatio: '16/9' }}
+                    />
+                  )}
+                  <div className="absolute inset-0 flex items-center justify-center bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <span className="text-white text-2xl font-bold text-center px-4 drop-shadow-lg">{project.title}</span>
+                  </div>
+                </div>
+                <div className="p-6">
+                  <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
+                  <p className="text-muted-foreground mb-4">{project.description}</p>
+                  {project.link && (
+                    <a href={project.link} target="_blank" rel="noopener noreferrer" className="text-primary flex items-center font-medium">
+                      View Project <ArrowRight className="ml-1 h-4 w-4" />
+                    </a>
+                  )}
+                </div>
               </div>
-              <div className="p-6">
-                <h3 className="text-xl font-semibold mb-2">Pebbles Capstone Project</h3>
-                <p className="text-muted-foreground mb-4">
-                  An innovative educational platform built for interactive learning and collaborative research.
-                </p>
-                <a href="https://pebbles-capstone.netlify.app/" target="_blank" rel="noopener noreferrer" className="text-primary flex items-center font-medium">
-                  View Project <ArrowRight className="ml-1 h-4 w-4" />
-                </a>
-              </div>
-            </div>
-            
-            <div className="group rounded-xl overflow-hidden border border-border/50 bg-secondary/20 hover:bg-secondary/40 transition-colors">
-              <div className="aspect-video bg-gradient-to-r from-brix-800/80 to-brix-600/80 flex items-center justify-center">
-                <h3 className="text-xl font-bold text-white">Celiac App</h3>
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-semibold mb-2">Celiac App</h3>
-                <p className="text-muted-foreground mb-4">
-                  OCR-powered application for real-time ingredient verification supporting users with gluten intolerance.
-                </p>
-                <Link to="/portfolio" className="text-primary flex items-center font-medium">
-                  Learn More <ArrowRight className="ml-1 h-4 w-4" />
-                </Link>
-              </div>
-            </div>
-            
-            <div className="group rounded-xl overflow-hidden border border-border/50 bg-secondary/20 hover:bg-secondary/40 transition-colors">
-              <div className="aspect-video bg-gradient-to-r from-brix-800/80 to-brix-600/80 flex items-center justify-center">
-                <h3 className="text-xl font-bold text-white">FinSimpl</h3>
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-semibold mb-2">FinSimpl</h3>
-                <p className="text-muted-foreground mb-4">
-                  Financial platform connecting contractors and clients with tailored financing options.
-                </p>
-                <a href="https://www.finsimpl.com/" target="_blank" rel="noopener noreferrer" className="text-primary flex items-center font-medium">
-                  View Project <ArrowRight className="ml-1 h-4 w-4" />
-                </a>
-              </div>
-            </div>
+            ))}
           </div>
           
           <div className="text-center mt-12">
