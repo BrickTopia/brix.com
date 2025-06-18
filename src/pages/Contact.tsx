@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Mail, MapPin, PhoneCall, Send } from 'lucide-react';
 import { toast } from "@/hooks/use-toast";
 import data from '../data.json';
@@ -12,6 +12,48 @@ const Contact = () => {
   });
   
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  // Typing animation state
+  const [displayedText, setDisplayedText] = useState('');
+  const [phase, setPhase] = useState(0);
+  const fullText = "Ready to transform your business with AI? Let's start a conversation.";
+  const altText = "Let's build brick by brick...";
+
+  useEffect(() => {
+    let timeout: NodeJS.Timeout;
+    if (phase === 0) {
+      // Typing out the fullText
+      if (displayedText.length < fullText.length) {
+        timeout = setTimeout(() => {
+          setDisplayedText(fullText.slice(0, displayedText.length + 1));
+        }, 5000 / fullText.length);
+      } else {
+        // Wait, then start deleting 'Let's start a conversation.'
+        timeout = setTimeout(() => setPhase(1), 500);
+      }
+    } else if (phase === 1) {
+      // Delete 'Let's start a conversation.'
+      const deleteFrom = fullText.indexOf("Let's start a conversation.");
+      if (displayedText.length > deleteFrom) {
+        timeout = setTimeout(() => {
+          setDisplayedText(displayedText.slice(0, -1));
+        }, 3000 / (fullText.length - deleteFrom));
+      } else {
+        // Start typing altText
+        timeout = setTimeout(() => setPhase(2), 300);
+      }
+    } else if (phase === 2) {
+      // Type altText
+      if (displayedText.length < fullText.indexOf("Let's start a conversation.") + altText.length) {
+        const prefix = fullText.slice(0, fullText.indexOf("Let's start a conversation."));
+        const next = altText.slice(0, displayedText.length - prefix.length + 1);
+        timeout = setTimeout(() => {
+          setDisplayedText(prefix + next);
+        }, 3000 / altText.length);
+      }
+    }
+    return () => clearTimeout(timeout);
+  }, [displayedText, phase]);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -81,8 +123,9 @@ const Contact = () => {
         <div className="container mx-auto">
           <div className="max-w-3xl mx-auto text-center mb-16">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">Get in Touch</h1>
-            <p className="text-xl text-muted-foreground">
-              Ready to transform your business with AI? Let's start a conversation.
+            <p className="text-xl text-muted-foreground min-h-[2.5em]">
+              {displayedText}
+              <span className="animate-pulse">|</span>
             </p>
           </div>
         </div>
