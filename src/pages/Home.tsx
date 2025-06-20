@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { ArrowRight, Code, Database, Brain, BarChart, Server, Smartphone } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useTheme } from '../components/theme/ThemeProvider';
 import data from '../data.json';
+import Lottie from 'lottie-react';
 
 const Home = () => {
   const iconMap = {
@@ -18,10 +19,48 @@ const Home = () => {
   const featuredProjects = data.featuredProjects.slice(0, 3);
 
   const { theme } = useTheme();
+  const [lightAnimationData, setLightAnimationData] = useState(null);
+  const [darkAnimationData, setDarkAnimationData] = useState(null);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const [shouldPlay, setShouldPlay] = useState(true);
+
+  useEffect(() => {
+    const handleResize = () => setWindowWidth(window.innerWidth);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  useEffect(() => {
+    // Play animation once every 5 seconds
+    const interval = setInterval(() => {
+      setShouldPlay(true);
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  const handleAnimationComplete = () => {
+    setShouldPlay(false);
+  };
+
+  useEffect(() => {
+    fetch('/lottie/brix_lightmode.json')
+      .then(res => res.json())
+      .then(data => setLightAnimationData(data))
+      .catch(e => console.error("Failed to load light theme animation, ensure it's in public/lottie/brix_lightmode.json", e));
+    
+    fetch('/lottie/brix_darkmode.json')
+      .then(res => res.json())
+      .then(data => setDarkAnimationData(data))
+      .catch(e => console.error("Failed to load dark theme animation, ensure it's in public/lottie/brix_darkmode.json", e));
+  }, []);
+  
   let effectiveTheme = theme;
   if (theme === 'system') {
     effectiveTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
   }
+
+  const animationData = effectiveTheme === 'dark' ? darkAnimationData : lightAnimationData;
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -66,19 +105,30 @@ const Home = () => {
             </div>
             
             <div className="relative flex items-center justify-center min-h-[320px]">
-              <picture>
-                <source srcSet="/brix.png" media="(max-width: 640px)" />
-                <img
-                  src={effectiveTheme === 'dark' ? '/brix_landscape_white.png' : '/logo.png'}
-                  alt="Brix Logo"
+              {animationData ? (
+                <Lottie
+                  animationData={animationData}
+                  loop={false}
+                  autoplay={shouldPlay}
+                  onComplete={handleAnimationComplete}
                   className="mx-auto w-full h-auto drop-shadow-lg"
                   style={{
                     display: 'block',
-                    maxWidth: window.innerWidth <= 640 ? '90vw' : '625px',
-                    width: window.innerWidth <= 640 ? '100%' : '112.5%',
+                    maxWidth: windowWidth <= 640 ? '90vw' : '625px',
+                    width: windowWidth <= 640 ? '100%' : '112.5%',
                   }}
                 />
-              </picture>
+              ) : (
+                <div 
+                  className="mx-auto w-full h-auto"
+                  style={{
+                    display: 'block',
+                    maxWidth: windowWidth <= 640 ? '90vw' : '625px',
+                    width: windowWidth <= 640 ? '100%' : '112.5%',
+                    minHeight: '320px', // Maintain space
+                  }}
+                />
+              )}
               {/* Decorative elements */}
               <div className="absolute -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[200%] h-[200%] rounded-full bg-brix-500/5 animate-pulse-slow"></div>
               <div className="absolute -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150%] h-[150%] rounded-full bg-brix-600/5 animate-pulse-slow"></div>
