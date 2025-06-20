@@ -27,31 +27,45 @@ const Team = () => {
             {teamMembers.map((member, index) => (
               <div key={index} className="bg-background rounded-xl shadow-sm overflow-hidden border border-border/50">
                 <div className="grid grid-cols-1 md:grid-cols-3">
-                  <div className="md:col-span-1 bg-gradient-to-br from-brix-600 to-brix-800 p-8 text-white flex flex-col justify-between">
-                    <div>
+                  <div className="md:col-span-1 relative group min-h-[320px] flex">
+                    {member.image ? (
+                      <img
+                        src={member.image}
+                        alt={member.name}
+                        className="absolute inset-0 w-full h-full object-cover object-center"
+                        onError={e => {
+                          e.currentTarget.onerror = null;
+                          e.currentTarget.style.display = 'none';
+                        }}
+                      />
+                    ) : null}
+                    {!member.image && (
+                      <div className="absolute inset-0 w-full h-full flex items-center justify-center bg-brix-800 text-white text-4xl font-bold">
+                        {member.name.split(' ').map(n => n[0]).join('')}
+                      </div>
+                    )}
+                    <div className="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center items-center p-6 text-white">
                       <h3 className="text-2xl font-bold mb-2">{member.name}</h3>
-                      <p className="text-white/80 font-medium">{member.role}</p>
-                      
-                      <div className="mt-6">
+                      <p className="text-white/80 font-medium mb-4">{member.role}</p>
+                      <div className="mb-4">
                         <h4 className="text-lg font-semibold mb-2">Experience</h4>
-                        <ul className="space-y-1">
+                        <ul className="space-y-1 text-center">
                           {member.experience.map((exp, i) => (
                             <li key={i} className="text-white/80">{exp}</li>
                           ))}
                         </ul>
                       </div>
-                    </div>
-                    
-                    <div className="flex space-x-4 mt-8">
-                      <a href="mailto:brixaigroup@gmail.com" aria-label="Email" className="text-white hover:text-white/80 transition-colors">
-                        <Mail className="h-5 w-5" />
-                      </a>
-                      <a href="https://github.com/BrickTopia" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="text-white hover:text-white/80 transition-colors">
-                        <Github className="h-5 w-5" />
-                      </a>
-                      <a href="https://www.linkedin.com/company/brix-inc" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="text-white hover:text-white/80 transition-colors">
-                        <Linkedin className="h-5 w-5" />
-                      </a>
+                      <div className="flex space-x-4 mt-2">
+                        <a href={`mailto:${member.email}`} aria-label="Email" className="text-white hover:text-white/80 transition-colors">
+                          <Mail className="h-5 w-5" />
+                        </a>
+                        <a href={member.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="text-white hover:text-white/80 transition-colors">
+                          <Github className="h-5 w-5" />
+                        </a>
+                        <a href={member.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="text-white hover:text-white/80 transition-colors">
+                          <Linkedin className="h-5 w-5" />
+                        </a>
+                      </div>
                     </div>
                   </div>
                   

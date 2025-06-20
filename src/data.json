@@ -112,7 +112,7 @@
     {
       "name": "Sam Weninger",
       "role": "Backend & Big Data Engineer",
-      "bio": "Sam is an experienced engineer with expertise in backend systems, big data processing, and AI integration. Previously at Microsoft, Huawei, and Holland Bloorview, Sam has worked on production-scale data pipelines handling petabytes of data for Bing.",
+      "bio": "Sam is an experienced engineer with expertise in backend systems, big data processing, and AI integration. Previously at Microsoft and Huawei, Sam has worked on production-scale data pipelines handling petabytes of data for Bing.",
       "expertise": ["Backend Development", "Data Engineering", "LLMs", "Cloud Architecture"],
       "experience": ["Microsoft", "Huawei"],
       "achievements": [
@@ -120,10 +120,10 @@
         "Implemented language backfill logic for +2 Billion URLs indexed by Bing",
         "Engineered automated pipeline for discovering new domains for Bing"
       ],
-      "email": "brixaigroup@gmail.com",
-      "linkedin": "https://www.linkedin.com/company/brix-inc",
-      "github": "https://github.com/BrickTopia",
-      "image": "sam"
+      "email": "sweninger99@gmail.com",
+      "linkedin": "https://www.linkedin.com/in/samuel-weninger/",
+      "github": "https://github.com/SamWeninger",
+      "image": "/sam.png"
     },
     {
       "name": "Nish Patel",
@@ -139,7 +139,7 @@
       "email": "brixaigroup@gmail.com",
       "linkedin": "https://www.linkedin.com/company/brix-inc",
       "github": "https://github.com/BrickTopia",
-      "image": "nish"
+      "image": "/nish.png"
     },
     {
       "name": "Krishna Solanki",
@@ -155,7 +155,7 @@
       "email": "brixaigroup@gmail.com",
       "linkedin": "https://www.linkedin.com/company/brix-inc",
       "github": "https://github.com/BrickTopia",
-      "image": "krishna"
+      "image": "/krishna.png"
     }
   ],
   "values": [
