@@ -198,7 +198,7 @@ const Home = () => {
                   <p className="text-muted-foreground mb-4">{project.description}</p>
                   {project.link && (
                     <a href={project.link} target="_blank" rel="noopener noreferrer" className="text-primary flex items-center font-medium">
-                      View Project <ArrowRight className="ml-1 h-4 w-4" />
+                      {project.demo ? 'Demo' : 'View Project'} <ArrowRight className="ml-1 h-4 w-4" />
                     </a>
                   )}
                 </div>

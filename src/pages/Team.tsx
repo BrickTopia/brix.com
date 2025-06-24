@@ -71,6 +71,11 @@ const Team = () => {
                   
                   <div className="md:col-span-2 p-8">
                     <div className="mb-6">
+                      <h3 className="text-2xl font-bold mb-2">{member.name}</h3>
+                      <p className="text-lg text-muted-foreground mb-4">{member.role}</p>
+                    </div>
+                    
+                    <div className="mb-6">
                       <h4 className="text-lg font-semibold mb-3">About</h4>
                       <p className="text-muted-foreground">{member.bio}</p>
                     </div>

@@ -46,28 +46,32 @@
       "description": "Educational platform built for matching students with mentors for interactive learning and collaborative research.",
       "image": "/pebbles.png",
       "technologies": ["React", "Node.js", "MongoDB", "AWS"],
-      "link": "https://pebbles-capstone.netlify.app/"
+      "link": "https://pebbles-capstone.netlify.app/",
+      "demo": false
     },
     {
       "title": "Celiac App",
       "description": "An application designed to support users with gluten intolerance by integrating advanced OCR and data management for real-time ingredient verification and dietary management.",
-      "image": "celiac",
-      "technologies": ["React Native", "Python", "TensorFlow", "OCR API"],
-      "link": ""
+      "image": "/celiac.png",
+      "technologies": ["React", "Python", "Next.js", "OCR API"],
+      "link": "https://preview--glutie-safe-scan-guide.lovable.app/landing",
+      "demo": true
     },
     {
       "title": "FinSimpl",
       "description": "Financial platform connecting contractors and clients with tailored financing options through ML-powered matching algorithms.",
       "image": "/finsimpl.png",
       "technologies": ["React", "Node.js", "AWS", "ML Models"],
-      "link": "https://www.finsimpl.com/"
+      "link": "https://www.finsimpl.com/",
+      "demo": false
     },
     {
-      "title": "Budlight Canada",
-      "description": "Comprehensive redevelopment of the Bud Light Canada website with modern web technologies and responsive design.",
-      "image": "/budlight.png",
+      "title": "AdScout",
+      "description": "Full-stack web application that aggregates and presents digital advertisements from multiple public ad libraries, allowing users to search by keywords and view trending ads.",
+      "image": "/adscout.png",
       "technologies": ["React", "Next.js", "Contentful", "Vercel"],
-      "link": "https://www.budlight.ca/en/age-gate"
+      "link": "https://preview--savvy-ad-insights.lovable.app/",
+      "demo": true
     }
   ],
   "clientProjects": [
@@ -110,20 +114,20 @@
   ],
   "teamMembers": [
     {
-      "name": "Sam Weninger",
-      "role": "Backend & Big Data Engineer",
-      "bio": "Sam is an experienced engineer with expertise in backend systems, big data processing, and AI integration. Previously at Microsoft and Huawei, Sam has worked on production-scale data pipelines handling petabytes of data for Bing.",
-      "expertise": ["Backend Development", "Data Engineering", "LLMs", "Cloud Architecture"],
-      "experience": ["Microsoft", "Huawei"],
+      "name": "Krishna Solanki",
+      "role": "ML & Full Stack Engineer",
+      "bio": "Krishna specializes in machine learning, AI, and full-stack development. With experience at Meta, Amazon, and Wealthsimple, Krishna has delivered recommender systems, ML infrastructure, and high-throughput data pipelines.",
+      "expertise": ["Machine Learning", "AI Systems", "Full Stack Development", "Data Engineering"],
+      "experience": ["SaltXC", "Meta", "Amazon", "Wealthsimple"],
       "achievements": [
-        "Enhanced Bing Amenities quality by +30% leveraging LLMs, benefiting +14M businesses",
-        "Implemented language backfill logic for +2 Billion URLs indexed by Bing",
-        "Engineered automated pipeline for discovering new domains for Bing"
+        "Developed a hyper-personalized recommender system for Amazon, live since 2020",
+        "Led 3-week rebuild of Meta's advertising transaction pipeline ($2-3B monthly)",
+        "Built ML infrastructure for FinSimpl using AWS"
       ],
-      "email": "sweninger99@gmail.com",
-      "linkedin": "https://www.linkedin.com/in/samuel-weninger/",
-      "github": "https://github.com/SamWeninger",
-      "image": "/sam.png"
+      "email": "brixaigroup@gmail.com",
+      "linkedin": "https://www.linkedin.com/company/brix-inc",
+      "github": "https://github.com/BrickTopia",
+      "image": "/krishna.png"
     },
     {
       "name": "Nish Patel",
@@ -142,20 +146,20 @@
       "image": "/nish.png"
     },
     {
-      "name": "Krishna Solanki",
-      "role": "ML & Full Stack Engineer",
-      "bio": "Krishna specializes in machine learning, AI, and full-stack development. With experience at Meta, Amazon, and Wealthsimple, Krishna has delivered recommender systems, ML infrastructure, and high-throughput data pipelines.",
-      "expertise": ["Machine Learning", "AI Systems", "Full Stack Development", "Data Engineering"],
-      "experience": ["SaltXC", "Meta", "Amazon", "Wealthsimple"],
+      "name": "Sam Weninger",
+      "role": "Backend & Big Data Engineer",
+      "bio": "Sam is an experienced engineer with expertise in backend systems, big data processing, and AI integration. Previously at Microsoft and Huawei, Sam has worked on production-scale data pipelines handling petabytes of data for Bing.",
+      "expertise": ["Backend Development", "Data Engineering", "LLMs", "Cloud Architecture"],
+      "experience": ["Microsoft", "Huawei"],
       "achievements": [
-        "Developed a hyper-personalized recommender system for Amazon, live since 2020",
-        "Led 3-week rebuild of Meta's advertising transaction pipeline ($2-3B monthly)",
-        "Built ML infrastructure for FinSimpl using AWS"
+        "Enhanced Bing Amenities quality by +30% leveraging LLMs, benefiting +14M businesses",
+        "Implemented language backfill logic for +2 Billion URLs indexed by Bing",
+        "Engineered automated pipeline for discovering new domains for Bing"
       ],
-      "email": "brixaigroup@gmail.com",
-      "linkedin": "https://www.linkedin.com/company/brix-inc",
-      "github": "https://github.com/BrickTopia",
-      "image": "/krishna.png"
+      "email": "sweninger99@gmail.com",
+      "linkedin": "https://www.linkedin.com/in/samuel-weninger/",
+      "github": "https://github.com/SamWeninger",
+      "image": "/sam.png"
     }
   ],
   "values": [

@@ -58,7 +58,7 @@ const Portfolio = () => {
                         rel="noopener noreferrer" 
                         className="inline-flex items-center text-primary font-medium"
                       >
-                        Visit Project <ArrowUpRight className="ml-1 h-4 w-4" />
+                        {project.demo ? 'Demo' : 'Visit Project'} <ArrowUpRight className="ml-1 h-4 w-4" />
                       </a>
                     )}
                   </div>
